@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fbfbfb;
+  height: 4000px;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  gap: 200px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  position: absolute;
+
+  z-index: 100;
+}
+
+header > .name {
+  display: flex;
+  gap: 19px;
+  justify-content: center;
+  align-items: center;
+}
+
+header > .name > img {
+  max-width: 50px;
+  height: 55px;
+}
+header > .name > p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42.19px;
+  color: #445964;
+  /* min-width: 192px; */
+}
+
+header > nav {
+  display: flex;
+  gap: 90px;
+}
+header > nav > a {
+  color: #445964;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23.44px;
+}
+
+.hamburguer {
+  position: relative;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  border: none;
+}
+
+.hamburguer .bar,
+.hamburguer::after,
+.hamburguer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #445964;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+
+.hamburguer.is-active::before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburguer.is-active::after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+.hamburguer.is-active .bar {
+  opacity: 0;
+}
+
+.is-scrolling {
+  position: fixed;
+  background: #ccc;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 98;
+  background-color: #12002f;
+  padding-top: 120px;
+  transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+  left: 0;
+}
+
+@media (min-width: 1170px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .hamburguer {
+    display: none;
+  }
+}
+
+@media (max-width: 1170px) {
+  header > nav {
+    display: none;
+  }
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  top: 10vh;
+  position: relative;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  background-color: #1f103f;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
