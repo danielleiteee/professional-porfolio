@@ -54,6 +54,21 @@ header > nav > a {
   font-weight: 500;
   font-size: 20px;
   line-height: 23.44px;
+  transition: 2s;
+}
+
+header > nav > a::after {
+  content: "";
+  width: 0;
+  position: absolute;
+  background-color: #445964;
+  transition: 0.2s;
+}
+
+header > nav > a:hover:after {
+  display: block;
+  width: 35px;
+  height: 1px;
 }
 
 .hamburguer {
@@ -76,6 +91,7 @@ header > nav > a {
   background-color: #445964;
   margin: 6px 0px;
   transition: 0.4s;
+  min-width: 35px;
 }
 
 .hamburguer.is-active::before {
@@ -101,7 +117,7 @@ header > nav > a {
   width: 100%;
   min-height: 100vh;
   z-index: 98;
-  background-color: #12002f;
+  background-color: #dfdfdf;
   padding-top: 120px;
   transition: 0.4s;
 }
@@ -132,10 +148,48 @@ header > nav > a {
   top: 10vh;
   position: relative;
   max-width: 200px;
+  border-radius: 20px;
   margin: 0 auto 16px;
-  background-color: #1f103f;
+  background-color: #263138;
   padding: 12px 16px;
   text-align: center;
   text-decoration: none;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 28.13px;
   color: white;
+  transition: 0.2s;
+}
+
+.mobile-nav a:hover {
+  background-color: rgb(38, 49, 56, 0.75);
+}
+
+@media (max-width: 700px) {
+  header {
+    height: auto;
+    padding: 10px 50px;
+  }
+
+  header > .name {
+    display: grid;
+    grid-template-columns: auto;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 530px) {
+  header {
+    gap: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
