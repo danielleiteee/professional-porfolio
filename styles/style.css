@@ -9,7 +9,6 @@
 
 body {
   background-color: #fbfbfb;
-  height: 4000px;
 }
 
 header {
@@ -127,7 +126,7 @@ header > nav > a:hover:after {
   left: 0;
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1200px) {
   .mobile-nav {
     display: none;
   }
@@ -137,7 +136,7 @@ header > nav > a:hover:after {
   }
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1200px) {
   header > nav {
     display: none;
   }
@@ -200,7 +199,7 @@ header > nav > a:hover:after {
   height: auto;
   padding: 200px 250px;
   display: flex;
-  flex: row;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -242,7 +241,9 @@ header > nav > a:hover:after {
 }
 
 .landing-home button {
-  width: 310px;
+  width: 100%;
+  min-width: 230px;
+  max-width: 310px;
   height: 65px;
   color: white;
   font-size: 24px;
@@ -265,11 +266,87 @@ header > nav > a:hover:after {
 .social-media {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 40px;
   align-self: flex-end;
   margin-top: 150px;
+  margin-left: 10px;
 }
 .social-media a img {
   width: 40px;
   height: 40px;
+}
+
+@media (max-width: 1600px) {
+  .landing-home {
+    padding: 200px 150px;
+  }
+}
+
+@media (max-width: 1310px) {
+  .landing-home {
+    padding: 200px 100px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .landing-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: auto;
+    gap: 40px;
+  }
+
+  .landing-home .landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: auto;
+  }
+
+  .landing-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .social-media {
+    margin-top: 100px;
+  }
+
+  .landing-home > img {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-text p:nth-child(2) {
+    font-size: 60px;
+    line-height: auto;
+  }
+}
+
+@media (max-width: 510px) {
+  .landing-text p:nth-child(2) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .landing-text p:nth-child(2) {
+    display: none;
+  }
+  .landing-text p:nth-child(1) {
+    max-width: 100%;
+  }
+  .landing-text p:nth-child(3) {
+    max-width: 100%;
+  }
+
+  .landing-home {
+    padding: 200px 20px;
+  }
 }
